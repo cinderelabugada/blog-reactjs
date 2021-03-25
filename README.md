@@ -16,10 +16,10 @@
 
 ```json
 {
-  title: 'string',
-  content: 'string',
-  userId: 'int',
-  created_at: 'date'
+  title: "string",
+  content: "string",
+  userId: "int",
+  created_at: "date"
 }
 ```
 
@@ -27,8 +27,8 @@
 
 ```json
 {
-  id: '',
-  name: 'string'
+  id: "",
+  name: "string"
 }
 ```
 
