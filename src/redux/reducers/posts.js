@@ -5,7 +5,8 @@ import {
 const initialState = {
   items: [],
   isLoading: false,
-  error: null
+  error: null,
+  pagination: null
 }
 
 const posts = (state = initialState, action) => {
@@ -24,7 +25,8 @@ const posts = (state = initialState, action) => {
     case POSTS_GET_ALL.SUCCESS:
       return {
         ...initialState,
-        items: action.payload
+        items: action.payload.items,
+        pagination: action.payload.pagination
       }
     default:
       return state

@@ -14,6 +14,7 @@ const Menu = () => {
   return (
     <Flex
       p='15px'
+      w='200px'
       flexFlow='column'
       alignItems='flex-end'
     >

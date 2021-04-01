@@ -7,15 +7,14 @@ import {
   Text
 } from "@chakra-ui/react"
 
+
 const Post = ({post}) => {
   return (
-    <Box
-      bg='#EEE'
-      minH='calc(100vh - 200px)'
-      p='15px'
+    <Flex
+      flexFlow='column'
     >
+      {/* Title Header*/}
       <Flex
-        w='calc(100vw - 200px)'
         flexFlow='row'
         alignItems='center'
         justifyContent='space-between'
@@ -23,7 +22,7 @@ const Post = ({post}) => {
         <Heading variant='h2' size='xl'>
           {post.title}
         </Heading>
-        <Flex
+        <Box
           flexFlow='column'
           alignItems='flex-end'
         >
@@ -33,12 +32,16 @@ const Post = ({post}) => {
           <Text fontSize='sm'>
             {post.created_at.toLocaleString()}
           </Text>
-        </Flex>
+        </Box>
       </Flex>
-      <Box>
+      {/* Content */}
+      <Flex
+        p="20px 0"
+        textAlign='justify'
+      >
         {post.content}
-      </Box>
-    </Box>
+      </Flex>
+    </Flex>
   )
 }
 

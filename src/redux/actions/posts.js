@@ -1,4 +1,5 @@
 import api from '../../services/api'
+import querystring from 'querystring'
 import {
   POSTS_GET_ALL
 } from './types'
@@ -7,21 +8,31 @@ const getAllStarted = () => ({
   type: POSTS_GET_ALL.STARTED,
 })
 
-const getAllSuccess = payload => ({
+const getAllSuccess = (data, pagination) => ({
   type: POSTS_GET_ALL.SUCCESS,
-  payload
+  payload: { items: data, pagination }
 })
 
 const getAllFailure = () => ({
   type: POSTS_GET_ALL.FAILURE
 })
 
-export const getAll = () => dispatch => {
+export const getAll = (_start, _end) => dispatch => {
+  const qs = querystring.stringify({
+    _start,
+    _end,
+    _expand: 'author'
+  })
   dispatch(getAllStarted())
-  return api.get('/posts/?_expand=author')
-    .then(res =>
-      dispatch(getAllSuccess(res.data))
-    )
+  return api.get(`/posts/?${qs}`)
+    .then(res => {
+      const pagination = {
+        _start,
+        _end,
+        _total: res.headers['x-total-count']
+      }
+      dispatch(getAllSuccess(res.data, pagination))
+    })
     .catch(err => getAllFailure(err))
 }
 
