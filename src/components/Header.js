@@ -1,26 +1,22 @@
 import React from 'react'
-import { Box, Heading } from "@chakra-ui/react"
+import {
+  Flex,
+  Heading
+} from "@chakra-ui/react"
 
 const Header = () => {
   return (
-    <Box
+    <Flex
       bg='#EAD637'
-      w='100%'
-      h='200px'
-      p={4}
-      color='white'
+      color='#333'
+      height='200px'
+      alignItems='center'
+      justifyContent='center'
     >
-      <Box
-        bg='gray.900'
-        maxW='xs'
-        p={4}
-        borderRadius={4}
-        justifyContent='center'>
-        <Heading>
-          Blog Bugado
-        </Heading>
-      </Box>
-    </Box>
+      <Heading>
+        Blog Bugado
+      </Heading>
+    </Flex>
   )
 }
 

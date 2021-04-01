@@ -6,9 +6,11 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "build": "parcel build ./src/index.html",
+    "api": "json-server --watch db.json"
   },
   "devDependencies": {
+    "json-server": "^0.16.3",
     "parcel": "^2.0.0-beta.2"
   },
   "dependencies": {
@@ -21,6 +23,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   }
 }
