@@ -8,3 +8,5 @@ export const POSTS_GET_ONE =
     genRequestTypes('POSTS_GET_ONE')
 export const POSTS_GET_ALL =
     genRequestTypes('POSTS_GET_ALL')
+export const POSTS_CREATE =
+    genRequestTypes('POSTS_CREATE')
