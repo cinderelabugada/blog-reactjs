@@ -70,7 +70,7 @@ export const createPost = (post) => dispatch => {
   return api.post('/posts', post)
     .then(res => {
       console.log(res)
-      dispatch(createSuccess({ ...post, ...res.data }))
+      dispatch(createSuccess(res.data)
     })
     .catch(err => dispatch(createFailure(err)))
 }
