@@ -35,4 +35,5 @@
 ### Back
 
 1. JSON-server - API/DB
+2. ExpressJS <- Sequelize <- PostgreSQL
 
